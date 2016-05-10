@@ -8,5 +8,6 @@
     <%= f.input :location_id, as: :select, collection: location_values %>
     <%= f.input :gender_id, as: :radio_buttons, collection: genders_values %>
     <%= f.button :submit %>
+    <%= link_to t("index.page.back"), patients_path %>
   <% end %>
 </div>

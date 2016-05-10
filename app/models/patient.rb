@@ -1,10 +1,17 @@
 class Patient < ActiveRecord::Base
-  AVALIABLE_GENDERS  = I18n.t("field_genders")
-  AVALIABLE_STATUSES = I18n.t("field_statuses")
+  class << self 
+    def avaliable_genders 
+      I18n.t("field_genders")
+    end
+
+    def avaliable_statuses 
+      I18n.t("field_statuses")
+    end
+  end
   MAX_ID_LENGTH = 6
   validates_presence_of :first_name, :last_name, :status_id, :location_id
-  validates_inclusion_of :status_id, in: 0...AVALIABLE_STATUSES.count
-  validates_inclusion_of :gender_id, in: 0...AVALIABLE_GENDERS.count
+  validates_inclusion_of :status_id, in: 0...avaliable_statuses.count
+  validates_inclusion_of :gender_id, in: 0...avaliable_genders.count
   validates_length_of :first_name, maximum: 30
   validates_length_of :middle_name, maximum: 10
   validates_length_of :last_name, maximum: 30
@@ -34,11 +41,11 @@ class Patient < ActiveRecord::Base
   end
 
   def gender 
-    AVALIABLE_GENDERS[self.gender_id]
+    self.class.avaliable_genders[self.gender_id]
   end
 
   def status 
-    AVALIABLE_STATUSES[self.status_id]
+    self.class.avaliable_statuses[self.status_id]
   end
 
   def viewed_count_up

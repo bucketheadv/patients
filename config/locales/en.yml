@@ -41,6 +41,7 @@ en:
       confirm: Are you sure?
       nothing_to_show: There is no data.
       new_patient: New Patient
+      back: Back
   lan:
     select: Please Select Language
     zh: Chinese(Simple)
