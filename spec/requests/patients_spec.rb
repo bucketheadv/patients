@@ -35,8 +35,6 @@ RSpec.describe "Patients", type: :request do
   describe "DELETE /patients/1" do 
     it "works! should delete a patient" do 
       delete patient_path(1)
-      @patient = Patient.find(1)
-      expect(@patient.deleted).to eq true
       expect(response).to have_http_status(302)
     end
   end
