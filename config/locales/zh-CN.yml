@@ -12,7 +12,11 @@ zh-CN:
         deleted: 是否已删除
         gender_id: 性别
         status_id: 状态
+        location_id: 位置
+        full_name: 全名
+        age: 年龄
         viewed_count: 查阅次数
+        birthday: 生日
       location:
         name: 名称
         code: 代码
@@ -25,3 +29,9 @@ zh-CN:
     - 不可用
     - 男
     - 女
+  index:
+    page:
+      operate: 操作
+      edit: 编辑
+      destroy: 删除
+      confirm: 您确认要删除吗?

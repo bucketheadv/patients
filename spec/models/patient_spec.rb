@@ -17,6 +17,7 @@ RSpec.describe Patient, type: :model do
       first_name: [I18n.t("errors.messages.blank")],
       last_name: [I18n.t("errors.messages.blank")],
       status_id: [I18n.t("errors.messages.inclusion")],
+      gender_id: [I18n.t("errors.messages.inclusion")]
     }
     expect(@patient_invalid.errors.messages).to eq errors
   end

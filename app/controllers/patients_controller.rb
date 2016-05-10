@@ -1,7 +1,7 @@
 class PatientsController < ApplicationController
   before_action :set_patient, only: [:show, :edit, :update, :destroy]
   def index 
-    @patients = Patient.all
+    @patients = Patient.not_deleted
   end
 
   def new
@@ -18,6 +18,7 @@ class PatientsController < ApplicationController
   end
 
   def show
+    @patient.viewed_count_up
   end
 
   def edit
@@ -38,7 +39,7 @@ class PatientsController < ApplicationController
 
   private
   def patient_params 
-    params.require(:patient).permit(:last_name, :first_name, :middle_name, :status_id, :gender_id, :location_id)
+    params.require(:patient).permit(:last_name, :first_name, :middle_name, :status_id, :gender_id, :location_id, :birthday)
   end
 
   def set_patient
