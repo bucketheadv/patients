@@ -35,3 +35,6 @@ zh-CN:
       edit: 编辑
       destroy: 删除
       confirm: 您确认要删除吗?
+  lan:
+    zh: 简体中文
+    en: 英文

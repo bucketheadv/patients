@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   resources :patients
+
+  get "/i18n" => 'application#i18n', as: :i18n
+  root to: 'patients#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

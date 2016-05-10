@@ -34,3 +34,9 @@ en:
     - Not available
     - Male
     - Female
+  index:
+    page:
+      confirm: Are you sure?
+  lan:
+    zh: Chinese(Simple)
+    en: English
