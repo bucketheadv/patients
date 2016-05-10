@@ -3,18 +3,10 @@
     <%= f.input :first_name %>
     <%= f.input :middle_name %>
     <%= f.input :last_name %>
-    <%= f.input :birthday %>
-    <%= f.input :status_id do %>
-      <%= f.select :status_id, statuses_values %>
-    <% end %>
-    <%= f.input :location_id do %>
-      <%= f.select :location_id, location_values %>
-    <% end %>
-    <%= f.input :gender_id do %>
-      <% genders_values.each do |v| %>
-        <%= f.radio_button :gender_id, v[1] %><%= v[0] %>
-      <% end %>
-    <% end %>
+    <%= f.input :birthday, start_year: Date.today.year - 90, end_year: Date.today.year %>
+    <%= f.input :status_id, as: :select, collection: statuses_values %>
+    <%= f.input :location_id, as: :select, collection: location_values %>
+    <%= f.input :gender_id, as: :radio_buttons, collection: genders_values %>
     <%= f.button :submit %>
   <% end %>
 </div>

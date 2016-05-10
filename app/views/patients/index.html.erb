@@ -1,6 +1,6 @@
 <div>
   <% if @patients.any? %>
-    <table border='1'>
+    <table class='table'>
       <tr>
         <th><%= t("activerecord.attributes.patient.mr_number") %></th>
         <th><%= t("activerecord.attributes.patient.full_name") %></th>
@@ -27,5 +27,9 @@
         </tr>
       <% end %>
     </table>
+  <% else %>
+    <%= t("index.page.nothing_to_show") %>
   <% end %>
 </div>
+
+<%= link_to t("index.page.new_patient"), new_patient_path %>

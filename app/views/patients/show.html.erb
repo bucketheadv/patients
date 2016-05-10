@@ -1,28 +1,42 @@
 <div>
-  <ul>
-    <li>
+  <dl class="dl-horizontal">
+    <dt>
       <%= t("activerecord.attributes.patient.mr_number") %>:
+    </dt>
+    <dd>
       <%= @patient.mr_number %>
-    </li>
-    <li>
+    </dd>
+    <dt>
       <%= t("activerecord.attributes.patient.full_name") %>:
+    </dt>
+    <dd>
       <%= @patient.full_name %>
-    </li>
-    <li>
+    </dd>
+    <dt>
       <%= t("activerecord.attributes.patient.birthday") %>:
+    </dt>
+    <dd>
       <%= @patient.birthday %>
-    </li>
-    <li>
+    </dd>
+    <dt>
       <%= t("activerecord.attributes.patient.status_id") %>:
+    </dt>
+    <dd>
       <%= @patient.status %>
-    </li>
-    <li>
+    </dd>
+    <dt>
       <%= t("activerecord.attributes.patient.location_id") %>:
+    </dt>
+    <dd>
       <%= @patient.location_name %>
-    </li>
-    <li>
+    </dd>
+    <dt>
       <%= t("activerecord.attributes.patient.gender_id") %>:
+    </dt>
+    <dd>
       <%= @patient.gender %>
-    </li>
+    </dd>
   </ul>
 </div>
+
+<%= link_to t("activerecord.models.patient"), patients_path %>
