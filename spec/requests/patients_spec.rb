@@ -25,6 +25,7 @@ RSpec.describe "Patients", type: :request do
     it "works! Create a patient" do 
       post patients_path, patient: {first_name: 'Tank', last_name: 'Lee', gender_id: 1, status_id: 0}
       expect(response).to redirect_to(assigns(:patient))
+      expect(response).to have_http_status(302)
     end
   end
 
