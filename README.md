@@ -1,28 +1,32 @@
-== README
+# Patients #
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Install ##
 
-Things you may want to cover:
+```
+git clone https://github.com/sven199109/patients.git
+cd patients
+bundle install
+```
+Then, `cp config/database.yml.example config/database.yml`, and set your password in it with the environment of production.
 
-* Ruby version
+```
+RAILS_ENV=production bundle exec rake db:create && rake db:migrate
+RAILS_ENV=production bundle exec rake db:seed
+```
 
-* System dependencies
+## Run ##
 
-* Configuration
+```
+SECRET_KEY_BASE=your_key_base RAILS_ENV=production bundle exec rails s 
+```
 
-* Database creation
+Then, open your browser to view it at `http://localhost:3000`.
 
-* Database initialization
+## Run Test ##
 
-* How to run the test suite
+```
+bundle exec rake db:test:prepare
+bundle exec rspec spec
+```
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Have fun!
