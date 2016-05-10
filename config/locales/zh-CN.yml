@@ -1,0 +1,26 @@
+zh-CN:
+  activerecord:
+    models:
+      location: 位置
+      patient:  病人
+    attributes:
+      patient:
+        first_name: 名字
+        middle_name: 中间名字
+        last_name: 姓氏
+        deleted: 是否已删除
+        gender_id: 性别
+        status_id: 状态
+        viewed_count: 查阅次数
+      location:
+        name: 名称
+        code: 代码
+  field_statuses:
+    - 初始
+    - 已提交
+    - 已治疗
+    - 已关闭
+  field_genders:
+    - 不可用
+    - 男
+    - 女
