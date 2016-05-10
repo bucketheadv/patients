@@ -4,6 +4,6 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def render_404
-    render json: {status: 404}
+    render json: {status: 404}, status: 404
   end
 end

@@ -21,6 +21,10 @@
 
 en:
   hello: "Hello world"
+  activerecord:
+    attributes:
+      patient:
+        mr_number: MR number
   field_statuses:
     - Initial
     - Referred

@@ -1,10 +1,20 @@
 class PatientsController < ApplicationController
   before_action :set_patient, only: [:show, :edit, :update, :destroy]
+  def index 
+    @patients = Patient.all
+  end
+
   def new
     @patient = Patient.new
   end
 
   def create
+    @patient = Patient.new(patient_params)
+    if @patient.save
+      redirect_to action: :index
+    else
+      render :new
+    end
   end
 
   def show
@@ -14,12 +24,23 @@ class PatientsController < ApplicationController
   end
 
   def update
+    if @patient.update_attributes(patient_params)
+      redirect_to @patient
+    else
+      render :edit
+    end
   end
 
   def destroy
+    @patient.update_attributes(deleted: true)
+    redirect_to action: :index
   end
 
   private
+  def patient_params 
+    params.require(:patient).permit(:last_name, :first_name, :middle_name, :status_id, :gender_id, :location_id)
+  end
+
   def set_patient
     @patient = Patient.find(params[:id])
   rescue ActiveRecord::RecordNotFound => _

@@ -36,6 +36,8 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   gem 'rspec-rails'
+  gem 'factory_girl_rails'
+  gem 'database_cleaner'
 end
 
 group :development do
@@ -48,3 +50,4 @@ end
 
 gem 'simple_form'
 gem 'rails-i18n'
+gem 'bootstrap-sass-rails'

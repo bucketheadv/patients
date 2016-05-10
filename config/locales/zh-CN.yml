@@ -5,8 +5,9 @@ zh-CN:
       patient:  病人
     attributes:
       patient:
+        mr_number: 编号
         first_name: 名字
-        middle_name: 中间名字
+        middle_name: 中间名
         last_name: 姓氏
         deleted: 是否已删除
         gender_id: 性别

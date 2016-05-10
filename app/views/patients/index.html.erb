@@ -1,0 +1,24 @@
+<div>
+  <% if @patients.any? %>
+    <table>
+      <tr>
+        <th><%= t("activerecord.attributes.patient.mr_number") %></th>
+        <th><%= t("activerecord.attributes.patient.first_name") %></th>
+        <th><%= t("activerecord.attributes.patient.middle_name") %></th>
+        <th><%= t("activerecord.attributes.patient.last_name") %></th>
+        <th><%= t("activerecord.attributes.patient.status_id") %></th>
+        <th><%= t("activerecord.attributes.patient.gender_id") %></th>
+      </tr>
+      <% @patients.each do |patient| %>
+        <tr>
+          <td><%= patient.mr_number %></td>
+          <td><%= patient.first_name %></td>
+          <td><%= patient.middle_name %></td>
+          <td><%= patient.last_name %></td>
+          <td><%= patient.status %></td>
+          <td><%= patient.gender %></td>
+        </tr>
+      <% end %>
+    </table>
+  <% end %>
+</div>
