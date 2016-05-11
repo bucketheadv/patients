@@ -11,6 +11,7 @@ Then, `cp config/database.yml.example config/database.yml`, and set your passwor
 
 ```
 RAILS_ENV=production bundle exec rake db:create && bundle exec rake db:migrate
+RAILS_ENV=production bundle exec rake assets:precompile
 RAILS_ENV=production bundle exec rake db:seed
 ```
 
