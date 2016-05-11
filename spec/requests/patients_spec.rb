@@ -45,6 +45,15 @@ RSpec.describe "Patients", type: :request do
     end
   end
 
+  describe "PUT /patient/update" do 
+    it "works! Visit the page to update Patient" do 
+      put patient_path(1), patient: {first_name: 'Leo', last_name: 'Hancx', gender_id: 2, status_id: 1}
+      expect(response).to have_http_status(302)
+      expect(response).to redirect_to(patient_path(assigns(:patient)))
+      expect(assigns(:patient).first_name).to eq 'Leo'
+    end
+  end
+
   describe "DELETE /patients/1" do 
     it "works! should delete a patient" do 
       delete patient_path(1)
