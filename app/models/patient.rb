@@ -1,13 +1,5 @@
 class Patient < ActiveRecord::Base
-  class << self 
-    def avaliable_genders 
-      I18n.t("field_genders")
-    end
-
-    def avaliable_statuses 
-      I18n.t("field_statuses")
-    end
-  end
+  include Concerns::I18nable
   MAX_ID_LENGTH = 6
   validates_presence_of :first_name, :last_name, :status_id, :location_id
   validates_inclusion_of :status_id, in: 0...avaliable_statuses.count
