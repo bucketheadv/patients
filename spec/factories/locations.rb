@@ -1,5 +1,6 @@
 FactoryGirl.define do 
   factory :location_valid, class: "Location" do 
+    id 1
     name "Test location 1"
     code "tl1"
   end

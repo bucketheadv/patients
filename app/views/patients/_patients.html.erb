@@ -1,0 +1,33 @@
+<div>
+  <% if patients.any? %>
+    <table class='table'>
+      <tr>
+        <th><%= t("activerecord.attributes.patient.mr_number") %></th>
+        <th><%= t("activerecord.attributes.patient.full_name") %></th>
+        <th><%= t("activerecord.attributes.patient.age") %></th>
+        <th><%= t("activerecord.attributes.patient.gender_id") %></th>
+        <th><%= t("activerecord.attributes.patient.status_id") %></th>
+        <th><%= t("activerecord.attributes.patient.location_id") %></th>
+        <th><%= t("activerecord.attributes.patient.viewed_count") %></th>
+        <th><%= t("index.page.operate") %></th>
+      </tr>
+      <% patients.each do |patient| %>
+        <tr>
+          <td><%= link_to patient.mr_number, patient %></td>
+          <td><%= patient.full_name %></td>
+          <td><%= patient.age %></td>
+          <td><%= patient.gender %></td>
+          <td><%= patient.status %></td>
+          <td><%= patient.location_name %></td>
+          <td><%= patient.viewed_count %></td>
+          <td>
+            <%= link_to t("index.page.edit"), edit_patient_path(patient) %>
+            <%= link_to t("index.page.destroy"), patient, method: :delete, data: { confirm: t("index.page.confirm") } %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+  <% else %>
+    <%= t("index.page.nothing_to_show") %>
+  <% end %>
+</div>

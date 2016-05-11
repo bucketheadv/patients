@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :patients
+  resources :locations, only: [:show]
 
   get "/i18n" => 'application#i18n', as: :i18n
   root to: 'patients#index'

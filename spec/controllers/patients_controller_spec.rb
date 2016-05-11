@@ -10,7 +10,7 @@ RSpec.describe PatientsController, type: :controller do
     expect(assigns(:patients).length).to eq 1
   end
 
-  it "should view index" do 
+  it "should view show" do 
     get :show, id: 1
     expect(response).to render_template('show')
     expect(assigns(:patient).viewed_count).to eq @patient_valid.viewed_count + 1

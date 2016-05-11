@@ -5,6 +5,7 @@ FactoryGirl.define do
     last_name "Satriani"
     gender_id 1
     status_id 0
+    location_id 1
   end
 
   factory :patient_invalid, class: 'Patient' do
