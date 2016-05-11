@@ -48,6 +48,6 @@ group :development do
   gem 'spring'
 end
 
-gem 'simple_form'
-gem 'rails-i18n'
-gem 'bootstrap-sass-rails'
+gem 'simple_form', '~> 3.2.1'
+gem 'rails-i18n', '~> 4.0.8'
+gem 'bootstrap-sass-rails', '~> 3.1.0'

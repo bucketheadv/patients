@@ -39,6 +39,7 @@ zh-CN:
       confirm: 您确认要删除吗?
       nothing_to_show: 没有任何数据。
       new_patient: 新建病历
+      patient_list: 病历列表
       back: 返回
   lan:
     select: 请选择语言

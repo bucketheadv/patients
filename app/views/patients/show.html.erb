@@ -36,7 +36,11 @@
     <dd>
       <%= @patient.gender %>
     </dd>
+    <dt></dt>
+    <dd>
+      <%= link_to t("index.page.patient_list"), patients_path %>
+      <%= link_to t("index.page.edit"), edit_patient_path(@patient) %>
+    </dd>
   </ul>
 </div>
 
-<%= link_to t("activerecord.models.patient"), patients_path %>
